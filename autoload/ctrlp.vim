@@ -1683,7 +1683,7 @@ fu! ctrlp#statusline()
 	let focus   = s:focus ? 'prt'  : 'win'
 	let byfname = s:ispath ? s:byfname ? 'file' : 'path' : 'line'
 	let marked  = s:opmul != '0' ?
-		\ exists('s:marked') ? ' <'.s:dismrk().'>' : ' <->' : ''
+		\ exists('s:marked') ? ' ['.s:dismrk().']' : ' [-]' : ''
 	if s:status != {}
 		let argms =
 			\ get(s:status, 'arg_type', '') == 'dict' ? [{
@@ -1701,7 +1701,7 @@ fu! ctrlp#statusline()
 		let focus   = '%#CtrlPMode2# '.focus.' %*'
 		let byfname = '%#CtrlPMode1# '.byfname.' %*'
 		let regex   = s:regexp  ? '%#CtrlPMode2# regex %*' : ''
-		let slider  = ' <'.prv.'>={'.item.'}=<'.nxt.'>'
+		let slider  = ' '.prv.' <'.item.'> '.nxt.' '
 		let dir     = ' %=%<%#CtrlPMode2# %{getcwd()} %*'
 		let &l:stl  = focus.byfname.regex.slider.marked.dir
 		if exists('s:timer')

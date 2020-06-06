@@ -13,7 +13,7 @@ let [g:loaded_ctrlp_mixed, g:ctrlp_newmix] = [1, 0]
 cal add(g:ctrlp_ext_vars, {
 	\ 'init': 'ctrlp#mixed#init(s:compare_lim)',
 	\ 'accept': 'ctrlp#acceptfile',
-	\ 'lname': 'fil + mru + buf',
+	\ 'lname': 'mix',
 	\ 'sname': 'mix',
 	\ 'type': 'path',
 	\ 'opmul': 1,
